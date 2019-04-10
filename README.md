@@ -8,6 +8,17 @@
 
 _Two player game. Players take turns rolling a die to earn points. Rolling a 1 means the player gains no points in the current round. First player to 100 points wins._
 
+## Specs
+|    Behavior    |          
+| ------------- |
+| Enter players' names |
+| When user clicks play the game starts |  
+| Game starts with player1 rolling |
+| If player rolls 1, turn ends and player earns 0 points |
+| Other wises player has option to end turn |
+| If player player chooses to end their turn their points are added to their total score, then the next player rolls for their turn |
+| Otherwise current player rolls again |      
+
 ## Setup/Installation Requirements
 
 * _Open a browser_
