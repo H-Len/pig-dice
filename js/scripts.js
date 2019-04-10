@@ -1,3 +1,46 @@
+//gh-piggy
+
+//business logic
+
+function Game() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//UI logic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//MASTER branch below:
+
+
 // business logic for pig dice game -------
 function Game(){
   this.players = [],
@@ -19,7 +62,7 @@ function Player(playerName, playerScore){
 }
 
 function rollDie(){
-   return Math.floor(Math.random() * 6) +1;
+  return Math.floor(Math.random() * 6) +1;
 
 }
 
@@ -49,44 +92,44 @@ console.log(rollDie());
 //         roundScore = 0;
 //         //end turn & switch player;
 //       } else {
-//         plqyScore += rollDie;
-//         //show buttons: hold or roll;
-//       }
-//       if (hold){
-//           playerScore += roundScore;
-//         //switch player
-//       }
-//     }
-//   }
-//   if ( playScore >= 100) {
-//     alert("You win!");
-//   }
-//   return plqyerScore;
-// }
+  //         plqyScore += rollDie;
+  //         //show buttons: hold or roll;
+  //       }
+  //       if (hold){
+    //           playerScore += roundScore;
+    //         //switch player
+    //       }
+    //     }
+    //   }
+    //   if ( playScore >= 100) {
+      //     alert("You win!");
+      //   }
+      //   return plqyerScore;
+      // }
 
-function rollDiceListenersPlayer1() {
-  $("button#roll1").on("click", function(){
-    $("#player1-round-score").text(rollDie());
-  });
-}
-function rollDiceListenersPlayer2() {
-  $("button#roll2").on("click", function(){
-    $("#player2-round-score").text(rollDie());
-  });
-}
-
-
-
-
-// User Interface for game ----
-var game = new Game();
+      function rollDiceListenersPlayer1() {
+        $("button#roll1").on("click", function(){
+          $("#player1-round-score").text(rollDie());
+        });
+      }
+      function rollDiceListenersPlayer2() {
+        $("button#roll2").on("click", function(){
+          $("#player2-round-score").text(rollDie());
+        });
+      }
 
 
 
-$(document).ready(function(){
-  rollDiceListenersPlayer1();
-  rollDiceListenersPlayer2();
-  $("form#game").submit(function(event){
-    event.preventDefault();
-  })
-})
+
+      // User Interface for game ----
+      var game = new Game();
+
+
+
+      $(document).ready(function(){
+        rollDiceListenersPlayer1();
+        rollDiceListenersPlayer2();
+        $("form#game").submit(function(event){
+          event.preventDefault();
+        })
+      })
