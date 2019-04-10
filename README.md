@@ -9,15 +9,15 @@
 _Two player game. Players take turns rolling a die to earn points. Rolling a 1 means the player gains no points in the current round. First player to 100 points wins._
 
 ## Specs
-|    Behavior    |          
-| ------------- |
-| Enter players' names |
-| When user clicks play the game starts |  
-| Game starts with player1 rolling |
-| If player rolls 1, turn ends and player earns 0 points |
-| Other wises player has option to end turn |
-| If player player chooses to end their turn their points are added to their total score, then the next player rolls for their turn |
-| Otherwise current player rolls again |      
+|    Behavior    |   Input  | Output |
+| ------------- | -------------  | ------------ |
+| Enter players' names | Enter player name | record/store player name for game |
+| When user clicks play the game starts |  click play  | start game |
+| Game starts with player1 rolling | with start of game, first roll| first roll is player one |
+| If player rolls 1, turn ends and player earns 0 points | player rolls 1 | round points go to zero and turn switches |
+| Other wises player has option to end turn | player does not roll 1 | option to hold or roll again are present |
+| If player player chooses to end their turn their points are added to their total score, then the next player rolls for their turn | after rolling and not rolling a 1, current player clicks Hold button | current round points for player are added to the player's total points. Turn switches to other player |
+| Otherwise current player rolls again | Current player clicks Roll button | die is rolled again |
 
 ## Setup/Installation Requirements
 
