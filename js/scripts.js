@@ -74,6 +74,7 @@ function rollDiceListenersPlayer2() {
 
 function holdListenerPlayer1(){
   $("button#hold1").on("click", function(){
+    alert('Hold! Change players.');
     var totalScore = (player1.tempscore += player1.score);
     player1.score = totalScore;
     player1.tempscore = 0;
@@ -81,11 +82,20 @@ function holdListenerPlayer1(){
     $("#player1-total-score").text(totalScore);
     if(player1.score >= 100) {
       alert("Player1 You Are The Winner!");
+      player1.tempscore = 0;
+      player1.score = 0;
+      player2.tempscore = 0;
+      player2.score = 0;
+      $("#player1-round-score").text(0);
+      $("#player1-total-score").text(0);
+      $("#player2-round-score").text(0);
+      $("#player2-total-score").text(0);
     }
   });
 }
 function holdListenerPlayer2(){
   $("button#hold2").on("click", function(){
+    alert('Hold! Change players.');
     var totalScore = (player2.tempscore += player2.score);
     player2.score = totalScore;
     player2.tempscore = 0;
@@ -93,6 +103,14 @@ function holdListenerPlayer2(){
     $("#player2-total-score").text(totalScore);
     if(player2.score >= 100) {
       alert("Player2 You Are The Winner!");
+      player1.tempscore = 0;
+      player1.score = 0;
+      player2.tempscore = 0;
+      player2.score = 0;
+      $("#player1-round-score").text(0);
+      $("#player1-total-score").text(0);
+      $("#player2-round-score").text(0);
+      $("#player2-total-score").text(0);
     }
   });
 }

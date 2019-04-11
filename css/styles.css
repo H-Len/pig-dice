@@ -1,6 +1,7 @@
 .container {
   font-family: 'Roboto Mono', monospace;
-margin-top: 40px;
+  margin-top: 40px;
+  background-color: lightblue;
 }
 
 #game {
@@ -21,8 +22,8 @@ margin-top: 40px;
 }
 
 .col-md-6 {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
+  width: 40%;
+  border: solid green;
+  padding: 10px;
   margin: 20px;
 }
