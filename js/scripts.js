@@ -38,14 +38,7 @@ function rollDie(){
 
 }
 
-//business logic for dice
-
-
-console.log(Math.floor(Math.random() * 6) +1);
-console.log(rollDie());
-
-
-
+//business logic for die
 function rollDiceListenersPlayer1() {
   $("button#roll1").on("click", function(){
     var player1Roll = rollDie();
@@ -54,6 +47,7 @@ function rollDiceListenersPlayer1() {
     if (player1Roll === 1) {
       player1.tempscore = 0;
       roundScore = 0;
+      alert("Oops! You rolled a 1. It's the other player's turn now.");
     }
 
     $("#player1-round-score").text(roundScore);
@@ -63,19 +57,46 @@ function rollDiceListenersPlayer1() {
 }
 function rollDiceListenersPlayer2() {
   $("button#roll2").on("click", function(){
-    var player2Roll = rollDie();
+     var player2Roll = rollDie();
     $("#player2-die-roll").text(player2Roll);
     var roundScore = ((player2.tempscore) += player2Roll)
     if (player2Roll === 1) {
       player2.tempscore = 0;
       roundScore = 0;
+      alert("Oops! You rolled a 1. It's the other player's turn now.");
     }
     $("#player2-round-score").text(roundScore);
 
-    console.log(roundScore);
 
   });
 }
+
+
+function holdListenerPlayer1(){
+  $("button#hold1").on("click", function(){
+    var totalScore = (player1.tempscore += player1.score);
+    player1.score = totalScore;
+    player1.tempscore = 0;
+      $("#player1-round-score").text(0);
+    $("#player1-total-score").text(totalScore);
+    if(player1.score >= 100) {
+      alert("Player1 You Are The Winner!");
+    }
+  });
+}
+function holdListenerPlayer2(){
+  $("button#hold2").on("click", function(){
+    var totalScore = (player2.tempscore += player2.score);
+    player2.score = totalScore;
+    player2.tempscore = 0;
+      $("#player2-round-score").text(0);
+    $("#player2-total-score").text(totalScore);
+    if(player2.score >= 100) {
+      alert("Player2 You Are The Winner!");
+    }
+  });
+}
+
 
 
 
@@ -87,6 +108,8 @@ var game = new Game();
 $(document).ready(function(){
   rollDiceListenersPlayer1();
   rollDiceListenersPlayer2();
+  holdListenerPlayer1();
+  holdListenerPlayer2();
   $("form#game").submit(function(event){
     event.preventDefault();
 
