@@ -97,7 +97,12 @@ function holdListenerPlayer2(){
   });
 }
 
-
+function rulesListeners(){
+  $("button#rules").on("click", function (){
+    $("#game").toggle();
+    $(".show-rules").toggle();
+  })
+}
 
 
 // User Interface for game ----
@@ -110,6 +115,7 @@ $(document).ready(function(){
   rollDiceListenersPlayer2();
   holdListenerPlayer1();
   holdListenerPlayer2();
+  rulesListeners();
   $("form#game").submit(function(event){
     event.preventDefault();
 
